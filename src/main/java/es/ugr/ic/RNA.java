@@ -88,7 +88,7 @@ public class RNA {
 			System.out.println("Red neuronal artificial con DeepLearning4J");
 			System.out.println("Elija una opcion:");
 			System.out.println("\t1) Entrenar una red multicapa (capa de entrada , capa oculta ReLU y capa de salida softmax)");
-			System.out.println("\t2) Entrenar una red basada en LeNet5 (capas convolutivas, capas pooling, capas oculta ReLU y capa de salida softmax)");
+			System.out.println("\t2) Entrenar una red basada en LeNet5 (capas convolutivas, capas pooling, capas ocultas densas y capa de salida softmax)");
 			System.out.println("\t3) Cargar una red ya entrenada para evaluarla");
 			System.out.println("\t4) Salir");
 			System.out.print("Opción: ");
@@ -186,7 +186,7 @@ public class RNA {
 				
 				learningRate = 0.013;
 				batchSize=64;
-				numEpochs=10;
+				numEpochs=6;
 				
 				
 				model = createModelConvolution(numRows, numColumns, outputNum, rngSeed, learningRate);
@@ -382,7 +382,7 @@ public class RNA {
 	                .weightInit(WeightInit.XAVIER)
 	                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
 	                //.updater(Updater.NESTEROVS).momentum(0.9)
-	                .updater(Updater.ADADELTA)
+	                .updater(Updater.ADADELTA).epsilon(1e-6)
 	                .list()
 	                .layer(0, new ConvolutionLayer.Builder(5, 5)
 	                        //nIn and nOut specify depth. nIn here is the nChannels and nOut is the number of filters to be applied
