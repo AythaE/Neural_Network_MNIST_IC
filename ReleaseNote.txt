@@ -1,0 +1,15 @@
+Proyecto creado con eclipse 4.6 Neon, Oracle JDK 1.8.0_111 y Apache Maven 3.0.5
+Se recomienda usar ese IDE para importar el proyecto y ejecutarlo de forma 
+correcta.
+
+Sera necesario realizar un maven install para instalar las dependencias del proyecto
+
+Una vez importado basta con ejecutar el proyecto seleccionando como metodo main el de
+la clase RNA (pkg es.ugr.ic) y empezar a interaccionar con el menú de la aplicación.
+
+Las opciones 1 y 2 ya estan configuradas para obtener los mejores resultados alcanzados
+(vease la memoria de este proyecto).
+
+Si se desea optimizar el tiempo de entrenamiento se recomienda darle las siguientes
+opciones a JVM -Xms1024m -Xmx4096m para darle como poco 1 GB de RAM y hasta 4 GB de
+RAM (los cuales tomará).
